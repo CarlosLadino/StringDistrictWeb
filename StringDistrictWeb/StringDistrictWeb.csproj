@@ -24,8 +24,40 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\common\models\chromaticNotes.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\instruments.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\instrumentTuningTypeChromaticNotes.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\level.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\noteFrequencies.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\siteVisitors.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\structureKeys.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\structures.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\structureTypes.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\tuningTypes.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\users.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\chromaticNotes.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\instruments.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\instrumentTuningTypeChromaticNotes.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\level.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\noteFrequencies.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\siteVisitors.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\structureKeys.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\structures.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\structureTypes.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\tuningTypes.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\users.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
