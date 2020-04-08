@@ -33,7 +33,9 @@ namespace Data.Models
         public virtual DbSet<Users> Users { get; set; }
 
         // Views
-
+        public virtual DbSet<VW_Freq> VW_Freq { get; set; }
+        public virtual DbSet<VW_Frequencies> VW_Frequencies { get; set; }
+        public virtual DbSet<VW_InstrumentsAndTunnings> VW_InstrumentsAndTunnings { get; set; }
 
         // Stored Procedures
 

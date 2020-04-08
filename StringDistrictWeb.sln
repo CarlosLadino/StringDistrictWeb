@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringDistrictWeb", "StringDistrictWeb\StringDistrictWeb.csproj", "{7FB098C5-1F47-4DAF-92B6-64E52FBB4B36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringDistrictWeb", "StringDistrictWeb\StringDistrictWeb.csproj", "{7FB098C5-1F47-4DAF-92B6-64E52FBB4B36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{20D20ABB-98A7-4811-9827-C4A051B15781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{20D20ABB-98A7-4811-9827-C4A051B15781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{E1F43B3C-9B5A-482C-BEA1-563CA1D4DC57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{E1F43B3C-9B5A-482C-BEA1-563CA1D4DC57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{2760600F-6F6E-4E50-9998-04AD4C22B0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E1F43B3C-9B5A-482C-BEA1-563CA1D4DC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1F43B3C-9B5A-482C-BEA1-563CA1D4DC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1F43B3C-9B5A-482C-BEA1-563CA1D4DC57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2760600F-6F6E-4E50-9998-04AD4C22B0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2760600F-6F6E-4E50-9998-04AD4C22B0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2760600F-6F6E-4E50-9998-04AD4C22B0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2760600F-6F6E-4E50-9998-04AD4C22B0A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
