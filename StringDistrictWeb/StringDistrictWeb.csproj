@@ -43,6 +43,7 @@
     <None Remove="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <None Remove="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <None Remove="ClientApp\src\app\common\models\users.model.ts" />
+    <None Remove="ClientApp\src\app\modules\instruments\instrument.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +65,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\users.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrument.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

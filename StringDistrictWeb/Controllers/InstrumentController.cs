@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using BLL.Managers;
 using System.Net.Http;
 using System.Net;
+using Data.Models;
 
 namespace StringDistrictWeb.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class InstrumentController : ControllerBase
     {
-        private InstrumentManager instrumentManager = new InstrumentManager();
+        private InstrumentManager _instrumentManager;
         private TunigTypesManager tuningTypeManager = new TunigTypesManager();
         private TuningTypeNotesManager tuningtypeNotesManager = new TuningTypeNotesManager();
         private ChromaticNotesManager chromaticNotesManager = new ChromaticNotesManager();
@@ -22,16 +23,21 @@ namespace StringDistrictWeb.Controllers
         private NoteFrequenciesManager noteFrequenciesManager = new NoteFrequenciesManager();
         private InstrumentTuningTypeChromaticNotesManager ittcnManager = new InstrumentTuningTypeChromaticNotesManager();
 
+        public InstrumentController(InstrumentManager instrumentManager)
+        {
+            this._instrumentManager = instrumentManager;
+        }
+
         [ActionName("GetInstruments")]
-        public IActionResult GetInstruments()
+        public ActionResult<IEnumerable<Instruments>> GetInstruments()
         {            
-            return Ok(this.instrumentManager.All.ToList());            
+            return Ok(this._instrumentManager.All.ToList());            
         }
 
         [ActionName("GetInstrumentById")]
         public IActionResult GetInstruments(int instrumentId)
         {
-            var data = this.instrumentManager.All.Where(i => i.Id == instrumentId).FirstOrDefault();
+            var data = this._instrumentManager.All.Where(i => i.Id == instrumentId).FirstOrDefault();
             return Ok(data);            
         }
 
