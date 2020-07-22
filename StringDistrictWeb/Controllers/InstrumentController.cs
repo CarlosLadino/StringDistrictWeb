@@ -11,19 +11,19 @@ using Data.Models;
 
 namespace StringDistrictWeb.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
-    public class InstrumentController : ControllerBase
+    public class InstrumentsController : ControllerBase
     {
-        private InstrumentManager _instrumentManager;
-        private TunigTypesManager tuningTypeManager = new TunigTypesManager();
+        private InstrumentsManager _instrumentManager;
+        private TuningTypesManager _tuningTypeManager;
         private TuningTypeNotesManager tuningtypeNotesManager = new TuningTypeNotesManager();
         private ChromaticNotesManager chromaticNotesManager = new ChromaticNotesManager();
         private StructuresManager structureManager = new StructuresManager();
         private NoteFrequenciesManager noteFrequenciesManager = new NoteFrequenciesManager();
         private InstrumentTuningTypeChromaticNotesManager ittcnManager = new InstrumentTuningTypeChromaticNotesManager();
 
-        public InstrumentController(InstrumentManager instrumentManager)
+        public InstrumentsController(InstrumentsManager instrumentManager, TuningTypesManager tuningTypesManager)
         {
             this._instrumentManager = instrumentManager;
         }
@@ -50,13 +50,13 @@ namespace StringDistrictWeb.Controllers
         [ActionName("GetTuningTypesByInstrumentId")]
         public IActionResult GetTuningTypesByInstrumentId(int instrumentId)
         {
-            return Ok(this.tuningTypeManager.GetDropDownData(instrumentId, 0).ToList());            
+            return Ok(this._tuningTypeManager.GetDropDownData(instrumentId, 0).ToList());            
         }
 
         [ActionName("GetTuningTypes")]
         public IActionResult GetTuningTypes()
         {
-            var tunings = this.tuningTypeManager.All.ToList();
+            var tunings = this._tuningTypeManager.All.ToList();
             return Ok(tunings);            
         }
 
@@ -81,7 +81,7 @@ namespace StringDistrictWeb.Controllers
         [ActionName("GetInstrumentsATunings")]
         public IActionResult GetInstrumentsATunings()
         {
-            return Ok(this.tuningTypeManager.GetInstrumentAndTunings().ToList());
+            return Ok(this._tuningTypeManager.GetInstrumentAndTunings().ToList());
         }
 
         [ActionName("GetNoteFrequenciesView")]

@@ -19,7 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +43,9 @@
     <None Remove="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <None Remove="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <None Remove="ClientApp\src\app\common\models\users.model.ts" />
+    <None Remove="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
     <None Remove="ClientApp\src\app\modules\instruments\instrument.service.ts" />
+    <None Remove="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,7 +67,11 @@
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\users.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrument.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

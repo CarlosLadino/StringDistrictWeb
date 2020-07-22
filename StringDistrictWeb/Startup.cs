@@ -23,6 +23,7 @@ namespace StringDistrictWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -32,7 +33,8 @@ namespace StringDistrictWeb
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DataContext"]));
 
             //Services
-            services.AddScoped<InstrumentManager>();
+            services.AddScoped<InstrumentsManager>();
+            services.AddScoped<TuningTypesManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

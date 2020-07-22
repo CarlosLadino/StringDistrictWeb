@@ -4,10 +4,10 @@
     using Data.Models;
     using Common;
 
-    public class InstrumentManager
+    public class InstrumentsManager
     {
         private readonly DataContext _dataContext;
-        public InstrumentManager(DataContext dataContext)
+        public InstrumentsManager(DataContext dataContext)
         {
             this._dataContext = dataContext;
         }

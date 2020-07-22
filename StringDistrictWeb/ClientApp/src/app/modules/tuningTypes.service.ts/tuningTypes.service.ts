@@ -6,14 +6,14 @@ import { IInstruments } from '../../common/models/instruments.model';
   providedIn: 'root',
 })
 
-export class InstrumentService {
-  public apiController = 'api/Instruments/';
+export class TuningTypesService {
+  public apiController = 'api/TuningTypes/';
   constructor(private httpClient: HttpClient) {
 
   }
 
-  public getIntruments() {
-    return this.httpClient.get(`${this.apiController}GetInstruments`);
+  public getTuningTypes() {
+    return this.httpClient.get(`${this.apiController}GetTuningTypes`);
   }
 
 }
