@@ -35,6 +35,9 @@ namespace Data.Models
         [StringLength(50)]
         public string Markers { get; set; }
 
+        [StringLength(50)]
+        public string ImagePath { get; set; }
+
 
         [InverseProperty("Instrument")]
         [IgnoreDataMember]

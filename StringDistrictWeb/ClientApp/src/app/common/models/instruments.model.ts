@@ -6,4 +6,5 @@ export interface IInstruments {
   isArchived: boolean;
   fretsNumber: number;
   markers: string;
+  imagePath: string;
 }
