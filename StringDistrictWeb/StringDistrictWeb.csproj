@@ -30,6 +30,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\common\helperModels\chordResult.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\fretBoardData.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\fretBoardSlotInformation.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\fretBoardStringRow.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\fretNumber.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\noteInformation.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\signature.ts" />
     <None Remove="ClientApp\src\app\common\models\chromaticNotes.model.ts" />
     <None Remove="ClientApp\src\app\common\models\instruments.model.ts" />
     <None Remove="ClientApp\src\app\common\models\instrumentTuningTypeChromaticNotes.model.ts" />
@@ -43,7 +51,9 @@
     <None Remove="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <None Remove="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <None Remove="ClientApp\src\app\common\models\users.model.ts" />
+    <None Remove="ClientApp\src\app\common\models\vwFrequencies.ts" />
     <None Remove="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
+    <None Remove="ClientApp\src\app\fretBoards\fretBoard.component.ts" />
     <None Remove="ClientApp\src\app\modules\instruments\instrument.service.ts" />
     <None Remove="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts" />
   </ItemGroup>
@@ -54,6 +64,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\chordResult.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\noteInformation.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoardData.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoardSlotInformation.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoardStringRow.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretNumber.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\signature.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\chromaticNotes.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\instruments.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\instrumentTuningTypeChromaticNotes.model.ts" />
@@ -67,7 +85,9 @@
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTuningNotes.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\userCustomTunings.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\models\users.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\models\vwFrequencies.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fretBoards\fretBoard.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrument.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts">
       <SubType>Code</SubType>

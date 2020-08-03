@@ -14,24 +14,12 @@
           <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
             <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Tunings</button>
             <div ngbDropdownMenu aria-labelledby="dropdownManual">
-              <button *ngFor="let tt of tuningTypes  | filter: 'instrumentId': instrument.id" ngbDropdownItem>{{tt.name}}</button>
-     
+              <button *ngFor="let tt of tuningTypes  | filter: 'instrumentId': instrument.id" ngbDropdownItem [routerLink]="['/fretBoard']" [queryParams]="{instrumentId: instrument.id, tuningTypeId:tt.id}">{{tt.name}}</button>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-   
-    <div class="btn-group">
-
-    
-      <!--<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button + {{instrument.Id}}">
-      <li role="menuitem" ng-repeat="tuningType in vm.tuningTypes | filter: {InstrumentId: instrument.Id} ">
-        <a ui-sref="InstrumentFretboard({ instrumentId: instrument.Id, tuningTypeId: tuningType.Id})">{{tuningType.Name}}</a>
-      </li>
-    </ul>-->
-    </div>
-
   </div>
 </div>

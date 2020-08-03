@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FilterPipe } from './common/pipes/transforms.pipe';
+import { FretBoardComponent } from './fretBoards/fretBoard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FilterPipe } from './common/pipes/transforms.pipe';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    FilterPipe
+    FilterPipe,
+    FretBoardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,7 +29,7 @@ import { FilterPipe } from './common/pipes/transforms.pipe';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'fretBoard', component: FretBoardComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ]),
     NgbModule
