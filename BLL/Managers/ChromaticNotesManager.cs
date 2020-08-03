@@ -4,33 +4,29 @@
     using Data.Models;
     using Common;
 
-    public class ChromaticNotesManager : ManagerBase 
+    public class ChromaticNotesManager
     {
-        public ChromaticNotesManager()
-                    :base ()
+        private readonly DataContext _dataContext;
+        public ChromaticNotesManager(DataContext dataContext)
         {
-        }
-
-        public ChromaticNotesManager(ref DataContext dataContext)
-            :base(ref dataContext)
-        {            
+            this._dataContext = dataContext;
         }
 
         public IQueryable<ChromaticNotes> All
         {
-            get { return this.DataContext.ChromaticNotes.OrderBy(i => i.Id); }
+            get { return this._dataContext.ChromaticNotes.OrderBy(i => i.Id); }
         }
 
         public ChromaticNotes GetNote(int noteId) {
-            return this.DataContext.ChromaticNotes.Where(i => i.Id == noteId).FirstOrDefault();
+            return this._dataContext.ChromaticNotes.Where(i => i.Id == noteId).FirstOrDefault();
         }
 
         public IQueryable<DropDownItem> GetDropDownData(int? selectedId)
         {
             selectedId = selectedId == null ? 0 : selectedId;
 
-            return this.DataContext.ChromaticNotes
-                .Union(this.DataContext.ChromaticNotes.Where(t => t.Id == selectedId))
+            return this._dataContext.ChromaticNotes
+                .Union(this._dataContext.ChromaticNotes.Where(t => t.Id == selectedId))
                 .Select(t => new DropDownItem { Id = t.Id, Name = t.Name })
                 .OrderBy(t => t.Name);
         }    

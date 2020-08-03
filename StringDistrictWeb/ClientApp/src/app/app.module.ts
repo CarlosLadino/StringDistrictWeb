@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -12,6 +12,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { FilterPipe } from './common/pipes/transforms.pipe';
 import { FretBoardComponent } from './fretBoards/fretBoard.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { StartupService } from './common/generalSevices/startup.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { FretBoardComponent } from './fretBoards/fretBoard.component';
     ]),
     NgbModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: APP_INITIALIZER, useFactory: (startupService: StartupService) => () => startupService.initialLoad(), deps: [StartupService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

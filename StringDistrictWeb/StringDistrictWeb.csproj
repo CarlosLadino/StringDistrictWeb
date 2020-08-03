@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\common\generalSevices\startup.service.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\chordResult.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\fretBoardData.ts" />
@@ -54,6 +55,7 @@
     <None Remove="ClientApp\src\app\common\models\vwFrequencies.ts" />
     <None Remove="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
     <None Remove="ClientApp\src\app\fretBoards\fretBoard.component.ts" />
+    <None Remove="ClientApp\src\app\modules\chromaticNotes\chromaticNotes.service.ts" />
     <None Remove="ClientApp\src\app\modules\instruments\instrument.service.ts" />
     <None Remove="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts" />
   </ItemGroup>
@@ -64,6 +66,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\common\generalSevices\startup.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\chordResult.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\noteInformation.ts" />
@@ -88,6 +91,9 @@
     <TypeScriptCompile Include="ClientApp\src\app\common\models\vwFrequencies.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\pipes\transforms.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\fretBoards\fretBoard.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\chromaticNotes\chromaticNotes.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrument.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts">
       <SubType>Code</SubType>

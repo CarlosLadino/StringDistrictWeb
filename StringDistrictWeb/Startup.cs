@@ -35,6 +35,7 @@ namespace StringDistrictWeb
             //Services
             services.AddScoped<InstrumentsManager>();
             services.AddScoped<TuningTypesManager>();
+            services.AddScoped<ChromaticNotesManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

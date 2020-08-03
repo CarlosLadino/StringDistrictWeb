@@ -18,7 +18,7 @@ namespace StringDistrictWeb.Controllers
         private InstrumentsManager _instrumentManager;
         private TuningTypesManager _tuningTypeManager;
         private TuningTypeNotesManager tuningtypeNotesManager = new TuningTypeNotesManager();
-        private ChromaticNotesManager chromaticNotesManager = new ChromaticNotesManager();
+        private ChromaticNotesManager _chromaticNotesManager;
         private StructuresManager structureManager = new StructuresManager();
         private NoteFrequenciesManager noteFrequenciesManager = new NoteFrequenciesManager();
         private InstrumentTuningTypeChromaticNotesManager ittcnManager = new InstrumentTuningTypeChromaticNotesManager();
@@ -75,7 +75,7 @@ namespace StringDistrictWeb.Controllers
         [ActionName("GetChromaticNotes")]
         public IActionResult GetChromaticNotes()
         {
-            return Ok(this.chromaticNotesManager.All.ToList());
+            return Ok(this._chromaticNotesManager.All.ToList());
         }
 
         [ActionName("GetInstrumentsATunings")]
