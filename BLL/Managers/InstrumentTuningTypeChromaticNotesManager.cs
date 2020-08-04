@@ -4,26 +4,23 @@
     using Data.Models;
     using Common;
 
-    public class InstrumentTuningTypeChromaticNotesManager : ManagerBase
+    public class InstrumentTuningTypeChromaticNotesManager
     {
-        public InstrumentTuningTypeChromaticNotesManager()
-                    : base()
-        {
-        }
+        private readonly DataContext _dataContext;
 
-        public InstrumentTuningTypeChromaticNotesManager(ref DataContext dataContext)
-            : base(ref dataContext)
+        public InstrumentTuningTypeChromaticNotesManager(DataContext dataContext)
         {
+            this._dataContext = dataContext;
         }
 
         public IQueryable<InstrumentTuningTypeChromaticNotes> All
         {
-            get { return this.DataContext.InstrumentTuningTypeChromaticNotes; }
+            get { return this._dataContext.InstrumentTuningTypeChromaticNotes; }
         }
 
         public IQueryable<InstrumentTuningTypeChromaticNotes> GetInstrumentTuningTypeChromaticNotesByTuningId(int tuningTypeId)
         {
-            return this.DataContext.InstrumentTuningTypeChromaticNotes.Where(n => n.TuningTypeId == tuningTypeId);
+            return this._dataContext.InstrumentTuningTypeChromaticNotes.Where(n => n.TuningTypeId == tuningTypeId);
         }
     }
 }

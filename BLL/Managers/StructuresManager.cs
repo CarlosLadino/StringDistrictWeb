@@ -5,38 +5,35 @@
     using Common;
     using Microsoft.EntityFrameworkCore;
 
-    public class StructuresManager : ManagerBase 
+    public class StructuresManager
     {
-        public StructuresManager ()
-                    :base ()
-        {
-        }
+        private readonly DataContext _dataContext;
 
-        public StructuresManager(ref DataContext dataContext)
-            :base(ref dataContext)
-        {            
+        public StructuresManager(DataContext dataContext)
+        {
+            this._dataContext = dataContext;
         }
 
         public IQueryable<Structures> All
         {
-            get { return this.DataContext.Structures.OrderBy(i => i.Name); }
+            get { return this._dataContext.Structures.OrderBy(i => i.Name); }
         }
 
         public Structures GetStructure(int structureId) {
-            return this.DataContext.Structures.Include("StructureKeys").Where(i => i.Id == structureId).FirstOrDefault();            
+            return this._dataContext.Structures.Include("StructureKeys").Where(i => i.Id == structureId).FirstOrDefault();            
         }
 
         public IQueryable<Structures> GetStructureTypes()
         {
-            return this.DataContext.Structures.Include("StructureKeys");
+            return this._dataContext.Structures.Include("StructureKeys");
         }
 
         public IQueryable<DropDownItem> GetDropDownData(int structureTypeId, int? selectedId)
         {
             selectedId = selectedId == null ? 0 : selectedId;
 
-            var data = this.DataContext.Structures.Where(t => t.IsArchived == false && t.StructureTypeId == structureTypeId)
-                .Union(this.DataContext.Structures.Where(t => t.Id == selectedId))
+            var data = this._dataContext.Structures.Where(t => t.IsArchived == false && t.StructureTypeId == structureTypeId)
+                .Union(this._dataContext.Structures.Where(t => t.Id == selectedId))
                 .Select(t => new DropDownItem { Id = t.Id, Name = t.Name, OrderNumber = t.OrderNumber, GroupId = t.StructureTypeId })
                 .OrderBy(t => t.OrderNumber);
 
@@ -47,8 +44,8 @@
         {
             selectedId = selectedId == null ? 0 : selectedId;
 
-            var data = this.DataContext.Structures.Where(t => t.IsArchived == false)
-                .Union(this.DataContext.Structures.Where(t => t.Id == selectedId))
+            var data = this._dataContext.Structures.Where(t => t.IsArchived == false)
+                .Union(this._dataContext.Structures.Where(t => t.Id == selectedId))
                 .Select(t => new DropDownItem { Id = t.Id, Name = t.Name, OrderNumber = t.OrderNumber, GroupId = t.StructureTypeId })
                 .OrderBy(t => t.OrderNumber);
 

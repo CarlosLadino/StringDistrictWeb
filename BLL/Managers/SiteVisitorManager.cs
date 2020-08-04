@@ -4,21 +4,18 @@
     using Data.Models;
     using Common;
 
-    public class SiteVisitorManager : ManagerBase 
+    public class SiteVisitorManager
     {
-        public SiteVisitorManager()
-                    :base ()
-        {
-        }
+        private readonly DataContext _dataContext;
 
-        public SiteVisitorManager(ref DataContext dataContext)
-            :base(ref dataContext)
-        {            
+        public SiteVisitorManager(DataContext dataContext)
+        {
+            this._dataContext = dataContext;
         }
 
         public IQueryable<SiteVisitors> All
         {
-            get { return this.DataContext.SiteVisitors.OrderBy(i => i.VisitDate); }
+            get { return this._dataContext.SiteVisitors.OrderBy(i => i.VisitDate); }
         }
 
         public void SaveHit()
@@ -27,18 +24,18 @@
             {
                 var yesterday = System.DateTime.Today.AddDays(-1);
                 var tomorrow = System.DateTime.Today.AddDays(1);
-                var day = this.DataContext.SiteVisitors.Where(v => v.VisitDate < tomorrow && v.VisitDate > yesterday).FirstOrDefault();
+                var day = this._dataContext.SiteVisitors.Where(v => v.VisitDate < tomorrow && v.VisitDate > yesterday).FirstOrDefault();
                 if (day == null)
                 {
                     day = new Data.Models.SiteVisitors { HitCount = 1, VisitDate = System.DateTime.Now };
-                    this.DataContext.SiteVisitors.Add(day);
+                    this._dataContext.SiteVisitors.Add(day);
                 }
                 else
                 {
                     day.HitCount++;
                 }
 
-                this.DataContext.SaveChanges();
+                this._dataContext.SaveChanges();
             }
             catch (System.Exception)
             {

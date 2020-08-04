@@ -4,26 +4,23 @@
     using Data.Models;
     using Common;
 
-    public class NoteFrequenciesManager : ManagerBase
+    public class NoteFrequenciesManager
     {
-        public NoteFrequenciesManager()
-                    : base()
-        {
-        }
+        private readonly DataContext _dataContext;
 
-        public NoteFrequenciesManager(ref DataContext dataContext)
-            : base(ref dataContext)
+        public NoteFrequenciesManager(DataContext dataContext)
         {
+            this._dataContext = dataContext;
         }
 
         public IQueryable<NoteFrequencies> All
         {
-            get { return this.DataContext.NoteFrequencies.OrderBy(i => i.Id); }
+            get { return this._dataContext.NoteFrequencies.OrderBy(i => i.Id); }
         }
 
         public IQueryable<VW_Frequencies> VW_All
         {
-            get { return this.DataContext.VW_Frequencies.OrderBy(i => i.Id); }
+            get { return this._dataContext.VW_Frequencies.OrderBy(i => i.Id); }
         }
     }
 }

@@ -19,10 +19,23 @@ namespace StringDistrictWeb.Controllers
             this._tuningTypesManager = tunigTypesManager;
         }
 
-        [ActionName("GetTuningTypes")]
-        public IActionResult GetTunings()
+        [ActionName("GetTuningTypesByInstrumentId")]
+        public IActionResult GetTuningTypesByInstrumentId(int instrumentId)
         {
-            return Ok(this._tuningTypesManager.All.ToList());
+            return Ok(this._tuningTypesManager.GetDropDownData(instrumentId, 0).ToList());
+        }
+
+        [ActionName("GetTuningTypes")]
+        public IActionResult GetTuningTypes()
+        {
+            var tunings = this._tuningTypesManager.All.ToList();
+            return Ok(tunings);
+        }
+
+        [ActionName("GetInstrumentsATunings")]
+        public IActionResult GetInstrumentsATunings()
+        {
+            return Ok(this._tuningTypesManager.GetInstrumentAndTunings().ToList());
         }
     }
 }
