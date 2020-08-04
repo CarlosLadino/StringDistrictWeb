@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstrumentService } from '../modules/instruments/instrument.service';
 import { IInstruments } from '../common/models/instruments.model';
-import { TuningTypesService } from '../modules/tuningTypes.service.ts/tuningTypes.service';
+import { TuningTypesService } from '../modules/tuningTypes/tuningTypes.service';
 import { ITuningTypes } from '../common/models/tuningTypes.model';
 import { StartupService } from '../common/generalSevices/startup.service';
 

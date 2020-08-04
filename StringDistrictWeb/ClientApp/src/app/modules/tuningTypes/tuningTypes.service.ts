@@ -12,8 +12,16 @@ export class TuningTypesService {
 
   }
 
+  public getTuningTypesByInstrumentId() {
+    return this.httpClient.get(`${this.apiController}GetTuningTypesByInstrumentId`);
+  }
+
   public getTuningTypes() {
     return this.httpClient.get(`${this.apiController}GetTuningTypes`);
+  }
+
+  public getInstrumentsATunings() {
+    return this.httpClient.get(`${this.apiController}GetInstrumentsATunings`);
   }
 
 }

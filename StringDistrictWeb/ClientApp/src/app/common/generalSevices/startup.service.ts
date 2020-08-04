@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IInstruments } from '../models/instruments.model';
 import { InstrumentService } from '../../modules/instruments/instrument.service';
 import { ITuningTypes } from '../models/tuningTypes.model';
-import { TuningTypesService } from '../../modules/tuningTypes.service.ts/tuningTypes.service';
+import { TuningTypesService } from '../../modules/tuningTypes/tuningTypes.service';
 import { ChromaticNotesService } from '../../modules/chromaticNotes/chromaticNotes.service';
 import { IChromaticNotes } from '../models/chromaticNotes.model';
 

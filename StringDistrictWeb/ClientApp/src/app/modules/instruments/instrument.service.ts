@@ -16,4 +16,7 @@ export class InstrumentService {
     return this.httpClient.get(`${this.apiController}GetInstruments`);
   }
 
+  public getInstrumentById() {
+    return this.httpClient.get(`${this.apiController}GetInstrumentById`);
+  }
 }

@@ -57,7 +57,11 @@
     <None Remove="ClientApp\src\app\fretBoards\fretBoard.component.ts" />
     <None Remove="ClientApp\src\app\modules\chromaticNotes\chromaticNotes.service.ts" />
     <None Remove="ClientApp\src\app\modules\instruments\instrument.service.ts" />
-    <None Remove="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts" />
+    <None Remove="ClientApp\src\app\modules\instruments\instrumentTuningTypeChromaticNotes.service.ts" />
+    <None Remove="ClientApp\src\app\modules\noteFrequencies\noteFrequencies.service.ts" />
+    <None Remove="ClientApp\src\app\modules\structures\structures.service.ts" />
+    <None Remove="ClientApp\src\app\modules\tuningTypes\tuningTypeNotes.service.ts" />
+    <None Remove="ClientApp\src\app\modules\tuningTypes\tuningTypes.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -95,7 +99,11 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrument.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes.service.ts\tuningTypes.service.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\modules\instruments\instrumentTuningTypeChromaticNotes.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\noteFrequencies\noteFrequencies.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\structures\structures.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes\tuningTypeNotes.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\tuningTypes\tuningTypes.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
