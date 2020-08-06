@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,22 @@ import { FilterPipe } from './common/pipes/transforms.pipe';
 import { FretBoardComponent } from './fretBoards/fretBoard.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { StartupService } from './common/generalSevices/startup.service';
+import { IInstrumentTuningTypeChromaticNotes } from './common/models/instrumentTuningTypeChromaticNotes.model';
+import { InstrumentTuningTypeChromaticNotesService } from './modules/instruments/instrumentTuningTypeChromaticNotes.service';
+
+//Resolvers
+@Injectable({
+  providedIn: 'root',
+})
+export class InstrumentTuningTypeChromaticNotesByTuningIdResolver implements Resolve<any> {
+  constructor(private ittcnsService: InstrumentTuningTypeChromaticNotesService) {
+  }
+
+  resolve(route: ActivatedRouteSnapshot) {
+    let tuningTypeId = Number(route.params['tuningTypeId']);
+    return this.ittcnsService.getInstrumentTuningTypeChromaticNotesByTuningId(tuningTypeId);
+  }
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +47,7 @@ import { StartupService } from './common/generalSevices/startup.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fretBoard', component: FretBoardComponent },
+      { path: 'fretBoard/:instrumentId/:tuningTypeId', component: FretBoardComponent, resolve: { ittcns: InstrumentTuningTypeChromaticNotesByTuningIdResolver } },
       { path: 'fetch-data', component: FetchDataComponent },
     ]),
     NgbModule
@@ -42,4 +58,7 @@ import { StartupService } from './common/generalSevices/startup.service';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+

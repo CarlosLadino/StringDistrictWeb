@@ -5,6 +5,7 @@ namespace Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.Runtime.Serialization;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Text.Json.Serialization;
 
     public partial class StructureKeys
     {
@@ -32,6 +33,7 @@ namespace Data.Models
         [ForeignKey("StructureId")]
         [InverseProperty("StructureKeysStructure")]
         [IgnoreDataMember]
+        [JsonIgnore]
         public virtual Structures Structure { get; set; }
 
     }

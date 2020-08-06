@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 
-export class StructuresSrvice {
+export class StructuresService {
   public apiController = 'api/Structures/';
   constructor(private httpClient: HttpClient) {
 
@@ -30,5 +30,4 @@ export class StructuresSrvice {
   public getScale() {
     return this.httpClient.get(`${this.apiController}GetScale`);
   }
-
 }

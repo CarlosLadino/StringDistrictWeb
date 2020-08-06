@@ -41,7 +41,8 @@ namespace StringDistrictWeb.Controllers
         [ActionName("GetStructureTypes")]
         public IActionResult GetStructureTypes()
         {
-            return Ok(this._structuresManager.GetStructureTypes());
+            var data = this._structuresManager.GetStructureTypes().ToList();
+            return Ok(data);
         }
 
         [ActionName("GetScale")]

@@ -20,6 +20,14 @@ namespace StringDistrictWeb.Controllers
             this._ittcnManager = ittcnManager;
         }
 
+        [ActionName("GetInstrumentTuningTypeChromaticNotes")]
+        public IActionResult GetInstrumentTuningTypeChromaticNotes()
+        {
+            var data = this._ittcnManager.All.ToList();
+            return Ok(data);
+        }
+
+        [HttpGet("{tuningTypeId}")]
         [ActionName("GetInstrumentTuningTypeChromaticNotesByTuningId")]
         public IActionResult GetInstrumentTuningTypeChromaticNotesByTuningId(int tuningTypeId)
         {

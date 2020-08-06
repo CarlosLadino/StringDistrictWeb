@@ -4,6 +4,10 @@ import { IChromaticNotes } from '../common/models/chromaticNotes.model';
 import { IDropDownItem } from '../common/helperModels/dropDownItem';
 import { IStructures } from '../common/models/structures.model';
 import { ChordResult } from '../common/helperModels/chordResult';
+import { StructuresService } from '../modules/structures/structures.service';
+import { StaticDataService } from '../common/generalSevices/staticData.service';
+import { Route, ActivatedRoute } from '@angular/router';
+import { IInstrumentTuningTypeChromaticNotes } from '../common/models/instrumentTuningTypeChromaticNotes.model';
 
 @Component({
   selector: 'fretBoard',
@@ -29,11 +33,32 @@ export class FretBoardComponent {
   public structureLabel: string;
   public structure: IStructures;
   private instrumentSound; any;
-  constructor() {
+  private instrumentId: number;
+  private tuningTypeId: number;
+  private ittcns: IInstrumentTuningTypeChromaticNotes[];
+
+  constructor(private structuresService: StructuresService, private staticDataService: StaticDataService, private route: ActivatedRoute) {
 
   }
   ngOnInit() {
-  
+    this.structuresService.getStructureTypes().subscribe((result: IDropDownItem[]) => {
+      this.structureTypes = result;
+      this.selectedStructureType = this.structureTypes[0];
+    });
+
+    this.ittcns = this.route.snapshot.data['ittcns'];
+
+    this.route.params.subscribe(params => {
+      this.instrumentId = Number(params['instrumentId']);
+      this.tuningTypeId = Number(params['tuningTypeId']);
+    });
+    this.title = this.staticDataService.getInstrument(this.instrumentId).name;
+    this.tuningName = this.staticDataService.getTuningType(this.tuningTypeId).name;
+    var availableWidth = 980; //replace width window width           
+    var fretBar = 8;
+    var fretNumbersAreaHeight = 25;
+    var stringNumbersAreaWidth = 25;
+    var instrumentTotalHeight = fretNumbersAreaHeight * this.ittcns.length;
   }
 
 }

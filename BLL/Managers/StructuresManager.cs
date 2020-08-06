@@ -25,7 +25,8 @@
 
         public IQueryable<Structures> GetStructureTypes()
         {
-            return this._dataContext.Structures.Include("StructureKeys");
+            //return this._dataContext.Structures.Include("StructureKeys");
+            return this._dataContext.Structures.Include("StructureKeysStructure");
         }
 
         public IQueryable<DropDownItem> GetDropDownData(int structureTypeId, int? selectedId)

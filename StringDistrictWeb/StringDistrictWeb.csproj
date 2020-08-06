@@ -31,8 +31,11 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\common\generalSevices\startup.service.ts" />
+    <None Remove="ClientApp\src\app\common\generalSevices\staticData.service.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\chordNote.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\chordResult.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
+    <None Remove="ClientApp\src\app\common\helperModels\fretBoard.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\fretBoardData.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\fretBoardSlotInformation.ts" />
     <None Remove="ClientApp\src\app\common\helperModels\fretBoardStringRow.ts" />
@@ -71,8 +74,11 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\common\generalSevices\startup.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\generalSevices\staticData.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\chordNote.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\chordResult.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\dropDownItem.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoard.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\noteInformation.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoardData.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\common\helperModels\fretBoardSlotInformation.ts" />

@@ -11,8 +11,12 @@ export class InstrumentTuningTypeChromaticNotesService {
 
   }
 
-  public getInstrumentTuningTypeChromaticNotesByTuningId() {
-    return this.httpClient.get(`${this.apiController}GetInstrumentTuningTypeChromaticNotesByTuningId`);
+  public getInstrumentTuningTypeChromaticNotes() {
+    return this.httpClient.get(`${this.apiController}GetInstrumentTuningTypeChromaticNotes`);
+  }
+
+  public getInstrumentTuningTypeChromaticNotesByTuningId(tuningTypeId: number) {
+    return this.httpClient.get(`${this.apiController}GetInstrumentTuningTypeChromaticNotesByTuningId/${tuningTypeId}`);
   }
 
 }

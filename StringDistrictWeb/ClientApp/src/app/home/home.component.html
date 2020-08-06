@@ -14,7 +14,7 @@
           <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
             <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Tunings</button>
             <div ngbDropdownMenu aria-labelledby="dropdownManual">
-              <button *ngFor="let tt of tuningTypes  | filter: 'instrumentId': instrument.id" ngbDropdownItem [routerLink]="['/fretBoard']" [queryParams]="{instrumentId: instrument.id, tuningTypeId:tt.id}">{{tt.name}}</button>
+              <button *ngFor="let tt of tuningTypes  | filter: 'instrumentId': instrument.id" ngbDropdownItem [routerLink]="['/fretBoard', instrument.id,tt.id]" router>{{tt.name}}</button>
             </div>
           </div>
 
