@@ -8,12 +8,14 @@
         <div class="col-xs-4 col-sm-4 col-lg-5">
           <h4>{{tuningName}}</h4>
         </div>
-        <!--<div class="col-xs-4 col-sm-4 col-lg-5" ng-show="vm.structureGroup == 1 || vm.structureGroup == 2">
-          <select id="chordTypecbo" class="form-control pull-right" ng-options="i.Name for i in vm.structureTypes | filter: {GroupId: vm.structureGroup}" ng-model="vm.selectedStructureType" ng-change="vm.onStructureTypeChanged()"></select>
-        </div>-->
+        <div class="col-xs-4 col-sm-4 col-lg-5" ng-show="vm.structureGroup == 1 || vm.structureGroup == 2">
+          <select id="chordTypecbo" class="form-control pull-right" [(ngModel)]="selectedStructureType" ng-change="onStructureTypeChanged()">
+            <option *ngFor="let st of structureTypes | filter: 'groupId': structureGroup" [ngValue]="st.id">{{st.name}}</option>            
+          </select>
+        </div>
       </div>
     </div>
-    <!--<div class="panel-body">
+    <div class="panel-body">
       <div id="d3Test">
         <svg id="main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 394">
           <defs id="definitions">
@@ -81,7 +83,7 @@
     </div>
     <div class="panel-footer">
 
-    </div>-->
+    </div>
   </div>
 
 </div>
